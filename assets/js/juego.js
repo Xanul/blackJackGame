@@ -27,7 +27,20 @@ const crearDeck = () => {
     deck=_.shuffle(deck)
 };
 
+const pedirCarta= () => {
+
+    if (deck.length === 0){
+        throw 'No hay cartas en el deck'
+    }
+    console.log(deck)
+    let carta = deck.pop()
+    return carta
+
+}
 
 crearDeck();
 
-console.log(deck)
+for (i = 0; i<60 ; i++){
+    pedirCarta()
+}
+
