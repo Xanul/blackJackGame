@@ -32,15 +32,25 @@ const pedirCarta= () => {
     if (deck.length === 0){
         throw 'No hay cartas en el deck'
     }
-    console.log(deck)
     let carta = deck.pop()
+    console.log(carta)
     return carta
+    
+}
+
+const valorCarta = (carta) => {
+
+    const valor = carta.substring(0, carta.length - 1);
+    
+    return (isNaN(valor)) ? ((valor === 'A') ? 11 : 10) : valor * 1; 
 
 }
 
 crearDeck();
+console.log(deck)
 
-for (i = 0; i<60 ; i++){
-    pedirCarta()
-}
+const test = valorCarta(pedirCarta());
+console.log(test)
+
+
 
