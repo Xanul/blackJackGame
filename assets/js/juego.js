@@ -3,7 +3,8 @@ const miModulo = (() => {
 
     // Variables utilizadas en el programa
     let deck = [],
-        puntosJugadores = [];
+        puntosJugadores = [],
+        nombresJugadores = [];
 
     const tipos = ["C", "D", "H", "S"],
           especiales = ["A", "J", "Q", "K"];
@@ -12,10 +13,16 @@ const miModulo = (() => {
     const btnPedir = document.querySelector("#btnPedir");
     const btnDetener = document.querySelector("#btnDetener");
     const btnNuevo = document.querySelector("#btnNuevo");
+    const nombreJugador = document.querySelector('#nombreJugador');
     const scoresJuego = document.querySelectorAll("small");
     const divCartasJugadores = document.querySelectorAll('.divCartas');
 
     const inicializarJuego = (numJugadores = 2) => {
+
+        if (nombresJugadores[0] === undefined){
+            agregarNombre();
+        }
+
         deck = crearDeck();
         puntosJugadores = [];
         for (let i = 0; i < numJugadores; i++) {
@@ -67,6 +74,11 @@ const miModulo = (() => {
         puntosJugadores[turno] += valorCarta(carta);
         scoresJuego[turno].innerText = puntosJugadores[turno];
         return puntosJugadores[turno];
+    }
+
+    const agregarNombre = () => {
+        nombresJugadores[0] = prompt('Ingresa tu nombre');
+        nombreJugador.innerText = nombresJugadores[0]
     }
 
     const renderizarCarta = (carta, turno) => {
@@ -141,7 +153,7 @@ const miModulo = (() => {
 
 
     btnNuevo.addEventListener("click", () => {
-
+        
         inicializarJuego();
 
     });
