@@ -16,6 +16,7 @@ const miModulo = (() => {
     const nombreJugador = document.querySelector('#nombreJugador');
     const scoresJuego = document.querySelectorAll("small");
     const divCartasJugadores = document.querySelectorAll('.divCartas');
+    const divLogos = document.querySelector('.sec')
 
     const inicializarJuego = (numJugadores = 2) => {
 
@@ -105,7 +106,7 @@ const miModulo = (() => {
             } else if (puntosJugador === puntosComputadora) {
                 alert("Empate");
             }
-        }, 100);
+        }, 200);
     }
 
     const turnoComputadora = (puntosJugador) => {
@@ -156,6 +157,10 @@ const miModulo = (() => {
         
         inicializarJuego();
 
+    });
+
+    divLogos.addEventListener("dblclick", ()=> {
+        alert('Amorcito!')
     });
 
     return {

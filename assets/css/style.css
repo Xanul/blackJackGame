@@ -2,8 +2,14 @@ html body {
     margin: 0;
     background-color: #2F4F30;
     color: white;
+    
 }
 
+.sec img{
+    margin-top: 100px;
+    width: auto;
+    height: 30px;
+}
 
 .titulo {
     text-align: center;
