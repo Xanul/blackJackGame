@@ -100,9 +100,9 @@ const miModulo = (() => {
                 (puntosJugador < 22 && puntosJugador > puntosComputadora) ||
                 puntosComputadora > 21
             ) {
-                alert("Ganste");
+                alert("Ganaste!!");
             } else if ((puntosComputadora < 22 && puntosJugador < puntosComputadora) || puntosJugador > 21) {
-                alert("La computadora gano");
+                alert("La computadora gano :(");
             } else if (puntosJugador === puntosComputadora) {
                 alert("Empate");
             }
@@ -160,7 +160,7 @@ const miModulo = (() => {
     });
 
     divLogos.addEventListener("dblclick", ()=> {
-        alert('Amorcito!')
+        alert('Hola Amorcito!')
     });
 
     return {
